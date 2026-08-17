@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* ========================================
+   Custom CSS Variables & Base Styles
+   ======================================== */
+
+@theme {
+  /* ---- Premium Dark Blue Portfolio Palette ---- */
+  --color-primary: #5B6CFF;
+  --color-primary-light: #7B8AFF;
+  --color-primary-dark: #4A59E0;
+  --color-secondary: #3B82F6;
+  --color-accent: #06b6d4;
+
+  /* Dark mode surface colors */
+  --color-dark-bg: #070B12;
+  --color-dark-surface: #090E17;
+  --color-dark-card: #0D1524;
+  --color-dark-border: #1a2235;
+
+  /* Light mode surface colors (kept for future) */
+  --color-light-bg: #f8fafc;
+  --color-light-surface: #ffffff;
+  --color-light-card: #f1f5f9;
+  --color-light-border: #e2e8f0;
+
+  /* Typography colors */
+  --color-text-primary: #F5F7FA;
+  --color-text-secondary: #8B92A0;
+  --color-text-muted: #5a6175;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Transitions */
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-fast: 150ms ease;
+
+  /* Shadows */
+  --shadow-glow: 0 0 20px rgba(91, 108, 255, 0.2);
+
+  /* Header */
+  --header-height: 72px;
+}
+
+/* ========================================
+   Base Layer
+   ======================================== */
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Scrollbar customization */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-dark-bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-dark-border);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+}

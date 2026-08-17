@@ -1,0 +1,16 @@
+{
+  "name": "ilham-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ilham Amjad — Full Stack Developer Portfolio",
+  "scripts": {
+    "dev:api": "node local-api.js"
+  },
+  "dependencies": {
+    "resend": "^4.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0"
+  }
+}
+
