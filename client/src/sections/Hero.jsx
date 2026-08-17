@@ -206,7 +206,7 @@ const Hero = () => {
               style={{ color: '#22D3EE' }}
             >
               <span className="opacity-70 mr-1">{'>'}</span>
-              Full Stack Developer
+              Full Stack Developer ,React developer , Web Designer , Seo Specalist, AI Automation Engineer,Ios Developer, App Developer
               <Cursor />
             </motion.p>
 
