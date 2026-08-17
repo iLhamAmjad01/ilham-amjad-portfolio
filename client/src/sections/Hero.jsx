@@ -81,9 +81,9 @@ const Dot = ({ className, size = 4, color = 'rgba(91,108,255,0.5)' }) => (
 
 /* ─── Stats data ─── */
 const STATS = [
-  { value: '3+', label: 'YEARS EXP.' },
-  { value: '20+', label: 'PROJECTS' },
-  { value: '15+', label: 'CLIENTS' },
+  { value: '6-MO', label: 'YEARS EXP.' },
+  { value: '05+', label: 'PROJECTS' },
+  { value: '05+', label: 'CLIENTS' },
 ];
 
 /* ─── Social icons ─── */
