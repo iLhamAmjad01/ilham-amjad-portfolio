@@ -40,44 +40,87 @@ const buildEmailHtml = ({ name, email, subject, message }) => {
   return `
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"></head>
-<body style="margin:0;padding:0;background-color:#f4f4f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f7;padding:32px 16px;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+</head>
+<body style="margin:0;padding:0;background-color:#070A12;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;word-break:break-word;">
+  <!-- Preview Text -->
+  <div style="display:none;font-size:1px;color:#070A12;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+    New inquiry from \${esc(name)} via your portfolio...
+  </div>
+  
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#070A12;padding:40px 20px;">
     <tr>
       <td align="center">
-        <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background-color:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-          <!-- Header -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:640px;background-color:#0D111D;border-radius:16px;border:1px solid #1E293B;box-shadow:0 10px 30px rgba(0,0,0,0.5),0 0 40px rgba(99,102,241,0.05);overflow:hidden;">
+          
+          <!-- Brand & Header -->
           <tr>
-            <td style="background:linear-gradient(135deg,#5B6CFF 0%,#6C5CE7 100%);padding:28px 32px;">
-              <h1 style="margin:0;font-size:20px;font-weight:700;color:#ffffff;letter-spacing:-0.01em;">New Portfolio Inquiry</h1>
-              <p style="margin:6px 0 0;font-size:13px;color:rgba(255,255,255,0.8);">Someone reached out via your portfolio contact form.</p>
+            <td style="padding:40px 40px 30px;background:radial-gradient(120% 100% at 50% 0%, rgba(99,102,241,0.15) 0%, rgba(7,10,18,0) 100%);">
+              <!-- Indicator & Name -->
+              <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom:24px;">
+                <tr>
+                  <td style="width:8px;height:8px;background-color:#10D9A0;border-radius:50%;box-shadow:0 0 8px rgba(16,217,160,0.5);"></td>
+                  <td style="padding-left:10px;font-size:12px;font-weight:600;color:#E2E8F0;letter-spacing:1px;text-transform:uppercase;">Ilham Amjad</td>
+                </tr>
+              </table>
+              <h1 style="margin:0;font-size:26px;font-weight:800;color:#F8FAFC;letter-spacing:-0.02em;">New Portfolio Inquiry</h1>
+              <p style="margin:10px 0 0;font-size:14px;color:#94A3B8;line-height:1.5;">Someone reached out via your portfolio contact form.</p>
             </td>
           </tr>
-          <!-- Body -->
+          
+          <!-- Contact Details -->
           <tr>
-            <td style="padding:28px 32px 32px;">
-              <!-- Name -->
-              <p style="margin:0 0 4px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#6B7280;">Name</p>
-              <p style="margin:0 0 20px;font-size:15px;color:#1F2937;">${esc(name)}</p>
-              <!-- Email -->
-              <p style="margin:0 0 4px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#6B7280;">Email</p>
-              <p style="margin:0 0 20px;font-size:15px;color:#1F2937;"><a href="mailto:${esc(email)}" style="color:#5B6CFF;text-decoration:none;">${esc(email)}</a></p>
-              <!-- Subject -->
-              <p style="margin:0 0 4px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#6B7280;">Subject</p>
-              <p style="margin:0 0 20px;font-size:15px;color:#1F2937;">${esc(subject || 'No Subject')}</p>
-              <!-- Message -->
-              <p style="margin:0 0 4px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#6B7280;">Message</p>
-              <div style="margin:0;padding:16px;background-color:#f9fafb;border-radius:8px;border:1px solid #e5e7eb;">
-                <p style="margin:0;font-size:14px;line-height:1.7;color:#374151;white-space:pre-wrap;">${esc(message)}</p>
+            <td style="padding:10px 40px 24px;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="50%" style="padding-bottom:24px;vertical-align:top;">
+                    <p style="margin:0 0 6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;">Name</p>
+                    <p style="margin:0;font-size:15px;font-weight:600;color:#F8FAFC;">\${esc(name)}</p>
+                  </td>
+                  <td width="50%" style="padding-bottom:24px;vertical-align:top;">
+                    <p style="margin:0 0 6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;">Email</p>
+                    <p style="margin:0;font-size:15px;font-weight:600;"><a href="mailto:\${esc(email)}" style="color:#06B6D4;text-decoration:none;">\${esc(email)}</a></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" style="padding-bottom:24px;">
+                    <p style="margin:0 0 6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;">Subject</p>
+                    <p style="margin:0;font-size:15px;font-weight:600;color:#F8FAFC;">\${esc(subject || 'No Subject')}</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Message Body -->
+          <tr>
+            <td style="padding:0 40px 40px;">
+              <p style="margin:0 0 10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;">Message</p>
+              <div style="margin:0;padding:24px;background-color:#070A12;border-radius:12px;border:1px solid #1E293B;">
+                <p style="margin:0;font-size:15px;line-height:1.6;color:#E2E8F0;white-space:pre-wrap;">\${esc(message)}</p>
               </div>
             </td>
           </tr>
+          
           <!-- Footer -->
           <tr>
-            <td style="padding:16px 32px;border-top:1px solid #f0f0f3;">
-              <p style="margin:0;font-size:11px;color:#9CA3AF;text-align:center;">Sent from your portfolio contact form · Hit reply to respond directly</p>
+            <td style="padding:24px 40px;background-color:#0A0E17;border-top:1px solid #1E293B;text-align:center;">
+              <p style="margin:0;font-size:12px;color:#64748B;line-height:1.5;">Sent from Ilham Amjad's portfolio contact form <span style="color:#6366F1;margin:0 4px;">&lt;/&gt;</span></p>
+              <p style="margin:8px 0 0;font-size:12px;color:#64748B;">Hit <strong style="color:#94A3B8;">Reply</strong> to respond directly</p>
             </td>
           </tr>
+          
         </table>
       </td>
     </tr>
