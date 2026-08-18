@@ -201,7 +201,7 @@ const Hero = () => {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              custom={10}
+              custom={2}
               className="mt-2 sm:mt-3 md:mt-5 text-[10px] sm:text-xs md:text-sm lg:text-[15px] font-mono tracking-[0.04em] sm:tracking-[0.06em]"
               style={{ color: '#22D3EE' }}
             >
