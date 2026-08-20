@@ -45,7 +45,7 @@ const buildEmailHtml = ({ name, email, subject, message }) => `
 <body style="margin:0;padding:0;background-color:#070A12;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;word-break:break-word;">
   <!-- Preview Text (Hidden in body, visible in inbox) -->
   <div style="display:none;font-size:1px;color:#070A12;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
-    New inquiry from \${esc(name)} via your portfolio...
+    New inquiry from ${esc(name)} via your portfolio...
   </div>
   
   <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#070A12;padding:40px 20px;">
@@ -75,17 +75,17 @@ const buildEmailHtml = ({ name, email, subject, message }) => `
                 <tr>
                   <td width="50%" style="padding-bottom:24px;vertical-align:top;">
                     <p style="margin:0 0 6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;">Name</p>
-                    <p style="margin:0;font-size:15px;font-weight:600;color:#F8FAFC;">\${esc(name)}</p>
+                    <p style="margin:0;font-size:15px;font-weight:600;color:#F8FAFC;">${esc(name)}</p>
                   </td>
                   <td width="50%" style="padding-bottom:24px;vertical-align:top;">
                     <p style="margin:0 0 6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;">Email</p>
-                    <p style="margin:0;font-size:15px;font-weight:600;"><a href="mailto:\${esc(email)}" style="color:#06B6D4;text-decoration:none;">\${esc(email)}</a></p>
+                    <p style="margin:0;font-size:15px;font-weight:600;"><a href="mailto:${esc(email)}" style="color:#06B6D4;text-decoration:none;">${esc(email)}</a></p>
                   </td>
                 </tr>
                 <tr>
                   <td colspan="2" style="padding-bottom:24px;">
                     <p style="margin:0 0 6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;">Subject</p>
-                    <p style="margin:0;font-size:15px;font-weight:600;color:#F8FAFC;">\${esc(subject || 'No Subject')}</p>
+                    <p style="margin:0;font-size:15px;font-weight:600;color:#F8FAFC;">${esc(subject || 'No Subject')}</p>
                   </td>
                 </tr>
               </table>
@@ -97,7 +97,7 @@ const buildEmailHtml = ({ name, email, subject, message }) => `
             <td style="padding:0 40px 40px;">
               <p style="margin:0 0 10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;">Message</p>
               <div style="margin:0;padding:24px;background-color:#070A12;border-radius:12px;border:1px solid #1E293B;">
-                <p style="margin:0;font-size:15px;line-height:1.6;color:#E2E8F0;white-space:pre-wrap;">\${esc(message)}</p>
+                <p style="margin:0;font-size:15px;line-height:1.6;color:#E2E8F0;white-space:pre-wrap;">${esc(message)}</p>
               </div>
             </td>
           </tr>
