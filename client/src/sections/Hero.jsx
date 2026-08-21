@@ -17,6 +17,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { HiCode } from 'react-icons/hi';
 import { IoRocketSharp } from 'react-icons/io5';
 import profileImage from '../assets/images/ilham.profile.png';
+import cvFile from '../assets/CV/Ilham_Amjad_CV_2.pdf';
 import { SOCIAL_LINKS, PERSONAL_INFO } from '../constants';
 
 /* ─── animation variants ─── */
@@ -267,8 +268,8 @@ const Hero = () => {
             >
               {/* Primary */}
               <a
-                href={PERSONAL_INFO.resumeUrl || '#'}
-                download
+                href={cvFile}
+                download="Ilham-Amjad-CV.pdf"
                 className="group inline-flex items-center gap-1.5 sm:gap-2 md:gap-2.5 px-3 sm:px-5 md:px-7 py-2 sm:py-2.5 md:py-3.5 rounded-full text-[9px] sm:text-[11px] md:text-[13px] lg:text-sm font-semibold text-white transition-all duration-300 hover:shadow-[0_8px_30px_rgba(91,108,255,0.25)] hover:brightness-110 active:scale-[0.97]"
                 style={{
                   background: 'linear-gradient(135deg, #6C5CE7 0%, #5B6CFF 100%)',
