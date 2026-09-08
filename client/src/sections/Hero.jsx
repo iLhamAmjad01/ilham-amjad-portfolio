@@ -407,7 +407,7 @@ const Hero = () => {
                     className="text-[10px] sm:text-sm md:text-xl font-bold leading-none"
                     style={{ color: '#F3F4F6' }}
                   >
-                    3+
+                    5 MO+
                   </div>
                   <div
                     className="mt-0.5 sm:mt-1 text-[5px] sm:text-[8px] md:text-[10px] font-semibold tracking-[0.04em] sm:tracking-[0.08em] uppercase"
@@ -448,7 +448,7 @@ const Hero = () => {
                     className="text-[10px] sm:text-sm md:text-xl font-bold leading-none"
                     style={{ color: '#F3F4F6' }}
                   >
-                    20+
+                    05+
                   </div>
                   <div
                     className="mt-0.5 sm:mt-1 text-[5px] sm:text-[8px] md:text-[10px] font-semibold tracking-[0.04em] sm:tracking-[0.08em] uppercase"
