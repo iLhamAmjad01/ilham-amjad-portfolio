@@ -348,7 +348,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             custom={2}
-            className="relative flex-shrink-0 order-2 w-[38%] sm:w-[40%] md:w-[42%] max-w-[420px]"
+            className="relative flex-shrink-0 order-2 w-[120px] sm:w-[40%] md:w-[42%] max-w-[420px] mt-7 sm:mt-0"
           >
             {/* Square profile image container */}
             <div
@@ -382,10 +382,10 @@ const Hero = () => {
             <motion.div
               variants={floatBadge}
               animate="animate"
-              className="absolute -top-2 -right-1 sm:-top-3 sm:-right-3 md:-top-5 md:-right-4 lg:-right-7 z-20"
+              className="absolute -top-7 -right-5 sm:-top-3 sm:-right-3 md:-top-5 md:-right-4 lg:-right-7 z-20"
             >
               <div
-                className="flex items-center gap-1.5 sm:gap-2 md:gap-3 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2.5 md:py-3.5 rounded-lg sm:rounded-xl"
+                className="flex items-center gap-1 sm:gap-2 md:gap-3 px-1.5 sm:px-3 md:px-4 py-1 sm:py-2.5 md:py-3.5 rounded-lg sm:rounded-xl"
                 style={{
                   background: 'rgba(13,21,36,0.95)',
                   border: '1px solid rgba(99,102,241,0.18)',
@@ -394,26 +394,26 @@ const Hero = () => {
                 }}
               >
                 <div
-                  className="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-md sm:rounded-lg"
+                  className="flex items-center justify-center w-5 h-5 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-md sm:rounded-lg"
                   style={{
                     background: 'rgba(91,108,255,0.1)',
                     color: '#8B7CFF',
                   }}
                 >
-                  <HiCode className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                  <HiCode className="w-2.5 h-2.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                 </div>
                 <div>
                   <div
-                    className="text-xs sm:text-sm md:text-xl font-bold leading-none"
+                    className="text-[10px] sm:text-sm md:text-xl font-bold leading-none"
                     style={{ color: '#F3F4F6' }}
                   >
                     3+
                   </div>
                   <div
-                    className="mt-0.5 sm:mt-1 text-[6px] sm:text-[8px] md:text-[10px] font-semibold tracking-[0.04em] sm:tracking-[0.08em] uppercase"
+                    className="mt-0.5 sm:mt-1 text-[5px] sm:text-[8px] md:text-[10px] font-semibold tracking-[0.04em] sm:tracking-[0.08em] uppercase"
                     style={{ color: '#6B7280' }}
                   >
-                    Years Experience
+                    Years Exp.
                   </div>
                 </div>
               </div>
@@ -423,10 +423,10 @@ const Hero = () => {
             <motion.div
               variants={floatBadgeAlt}
               animate="animate"
-              className="absolute -bottom-2 -left-1 sm:-bottom-3 sm:-left-3 md:-bottom-5 md:-left-4 lg:-left-7 z-20"
+              className="absolute -bottom-7 -left-5 sm:-bottom-3 sm:-left-3 md:-bottom-5 md:-left-4 lg:-left-7 z-20"
             >
               <div
-                className="flex items-center gap-1.5 sm:gap-2 md:gap-3 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2.5 md:py-3.5 rounded-lg sm:rounded-xl"
+                className="flex items-center gap-1 sm:gap-2 md:gap-3 px-1.5 sm:px-3 md:px-4 py-1 sm:py-2.5 md:py-3.5 rounded-lg sm:rounded-xl"
                 style={{
                   background: 'rgba(13,21,36,0.95)',
                   border: '1px solid rgba(99,102,241,0.18)',
@@ -435,26 +435,26 @@ const Hero = () => {
                 }}
               >
                 <div
-                  className="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-md sm:rounded-lg"
+                  className="flex items-center justify-center w-5 h-5 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-md sm:rounded-lg"
                   style={{
                     background: 'rgba(108,92,231,0.1)',
                     color: '#8B7CFF',
                   }}
                 >
-                  <IoRocketSharp className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                  <IoRocketSharp className="w-2.5 h-2.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                 </div>
                 <div>
                   <div
-                    className="text-xs sm:text-sm md:text-xl font-bold leading-none"
+                    className="text-[10px] sm:text-sm md:text-xl font-bold leading-none"
                     style={{ color: '#F3F4F6' }}
                   >
                     20+
                   </div>
                   <div
-                    className="mt-0.5 sm:mt-1 text-[6px] sm:text-[8px] md:text-[10px] font-semibold tracking-[0.04em] sm:tracking-[0.08em] uppercase"
+                    className="mt-0.5 sm:mt-1 text-[5px] sm:text-[8px] md:text-[10px] font-semibold tracking-[0.04em] sm:tracking-[0.08em] uppercase"
                     style={{ color: '#6B7280' }}
                   >
-                    Projects Shipped
+                    Projects
                   </div>
                 </div>
               </div>
