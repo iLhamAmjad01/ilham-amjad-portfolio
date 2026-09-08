@@ -1,7 +1,8 @@
 /**
- * Experience section — Work history grid.
+ * Experience section — Work history grid + Internship card.
  * Premium 2×3 connected panel layout with hover effects,
- * large decorative numbers, and scroll-reveal animations.
+ * large decorative numbers, scroll-reveal animations,
+ * and a dedicated Internship & Training subsection.
  */
 import { motion } from 'framer-motion';
 import {
@@ -11,6 +12,11 @@ import {
   HiOutlinePencil,
   HiOutlineTemplate,
   HiOutlineTerminal,
+  HiOutlineBriefcase,
+  HiOutlineMail,
+  HiOutlineCalendar,
+  HiOutlineBadgeCheck,
+  HiOutlineCheckCircle,
 } from 'react-icons/hi';
 
 /* ─── Experience data ─── */
@@ -53,6 +59,22 @@ const EXPERIENCES = [
   },
 ];
 
+/* ─── Internship data ─── */
+const INTERNSHIP = {
+  org: 'Arch Technologies',
+  position: 'Web Development Intern',
+  email: 'archtechnologies.pk@gmail.com',
+  period: '1 July 2026 – 30 August 2026',
+  duration: '8 Weeks',
+  type: 'Internship & Training Program',
+  focus: 'Web Development',
+  bullets: [
+    'Completed practical, project-based assignments aligned with real-world web development workflows.',
+    'Engaged with structured learning resources covering frontend development fundamentals and best practices.',
+    'Gained hands-on exposure to industry-relevant processes within a professional organisational environment.',
+  ],
+};
+
 /* ─── animation variants ─── */
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -71,7 +93,6 @@ const fadeUp = {
 const ExperienceCard = ({ item, index }) => {
   const { num, title, desc, Icon } = item;
   const isLeftCol = index % 2 === 0;
-  const isTopRow = index < 2;
 
   return (
     <motion.div
@@ -131,6 +152,155 @@ const ExperienceCard = ({ item, index }) => {
         >
           {desc}
         </p>
+      </div>
+    </motion.div>
+  );
+};
+
+/* ─── Internship Card ─── */
+const InternshipCard = () => {
+  const { org, position, email, period, duration, type, bullets } = INTERNSHIP;
+
+  return (
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-40px' }}
+      custom={3}
+      className="group relative overflow-hidden rounded-xl sm:rounded-2xl"
+      style={{
+        background: '#0B111C',
+        border: '1px solid rgba(148,163,184,0.12)',
+        boxShadow: '0 25px 80px rgba(0,0,0,0.3)',
+        transition: 'border-color 0.3s',
+      }}
+      whileHover={{
+        borderColor: 'rgba(99,102,241,0.35)',
+        boxShadow: '0 30px 90px rgba(91,108,255,0.1)',
+      }}
+    >
+      {/* Subtle top accent line */}
+      <div
+        className="absolute inset-x-0 top-0 h-[2px] rounded-t-xl"
+        style={{ background: 'linear-gradient(90deg, #6C5CE7 0%, #8B7CFF 50%, #5B6CFF 100%)' }}
+        aria-hidden="true"
+      />
+
+      <div className="relative px-6 py-7 sm:px-8 sm:py-9 md:px-10 md:py-10 lg:px-12 lg:py-11">
+        {/* Header row: icon + org/position */}
+        <div className="flex items-start gap-4">
+          {/* Briefcase icon */}
+          <div
+            className="flex-shrink-0 flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-lg"
+            style={{
+              background: 'rgba(91,108,255,0.07)',
+              border: '1px solid rgba(99,102,241,0.22)',
+            }}
+          >
+            <HiOutlineBriefcase className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: '#8B7CFF' }} />
+          </div>
+
+          <div className="flex-1 min-w-0">
+            <h3
+              className="text-base sm:text-lg md:text-xl font-bold leading-tight truncate"
+              style={{ color: '#F3F4F6' }}
+            >
+              {position}
+            </h3>
+            <p className="mt-0.5 text-[13px] sm:text-sm font-semibold" style={{ color: '#8B7CFF' }}>
+              {org}
+            </p>
+          </div>
+        </div>
+
+        {/* Meta chips row */}
+        <div className="mt-5 flex flex-wrap gap-2">
+          {/* Calendar */}
+          <span
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium"
+            style={{
+              background: 'rgba(91,108,255,0.08)',
+              border: '1px solid rgba(99,102,241,0.18)',
+              color: '#A5B4FC',
+            }}
+          >
+            <HiOutlineCalendar className="w-3.5 h-3.5" />
+            {period}
+          </span>
+
+          {/* Duration */}
+          <span
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium"
+            style={{
+              background: 'rgba(91,108,255,0.08)',
+              border: '1px solid rgba(99,102,241,0.18)',
+              color: '#A5B4FC',
+            }}
+          >
+            <HiOutlineBadgeCheck className="w-3.5 h-3.5" />
+            {duration}
+          </span>
+
+          {/* Type */}
+          <span
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium"
+            style={{
+              background: 'rgba(108,92,231,0.1)',
+              border: '1px solid rgba(108,92,231,0.22)',
+              color: '#C4B5FD',
+            }}
+          >
+            {type}
+          </span>
+        </div>
+
+        {/* Divider */}
+        <div
+          className="my-5 h-px"
+          style={{ background: 'rgba(148,163,184,0.1)' }}
+          aria-hidden="true"
+        />
+
+        {/* Bullet points */}
+        <ul className="space-y-2.5">
+          {bullets.map((point, idx) => (
+            <li key={idx} className="flex items-start gap-2.5">
+              <HiOutlineCheckCircle
+                className="flex-shrink-0 w-4 h-4 mt-0.5"
+                style={{ color: '#8B7CFF' }}
+              />
+              <span
+                className="text-[12px] sm:text-[13px] md:text-sm leading-[1.7]"
+                style={{ color: '#9CA3AF' }}
+              >
+                {point}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Divider */}
+        <div
+          className="mt-5 mb-4 h-px"
+          style={{ background: 'rgba(148,163,184,0.1)' }}
+          aria-hidden="true"
+        />
+
+        {/* Email row */}
+        <div className="flex items-center gap-2">
+          <HiOutlineMail className="flex-shrink-0 w-4 h-4" style={{ color: '#8B7CFF' }} />
+          <a
+            href={`mailto:${email}`}
+            id="internship-email-link"
+            className="text-[12px] sm:text-[13px] font-medium transition-colors duration-200"
+            style={{ color: '#A5B4FC' }}
+            onMouseEnter={e => (e.currentTarget.style.color = '#C4B5FD')}
+            onMouseLeave={e => (e.currentTarget.style.color = '#A5B4FC')}
+          >
+            {email}
+          </a>
+        </div>
       </div>
     </motion.div>
   );
@@ -219,6 +389,43 @@ const Experience = () => {
             ))}
           </div>
         </motion.div>
+
+        {/* ── Internship & Training Subsection ── */}
+        <div className="mt-14 sm:mt-16 md:mt-20">
+          {/* Sub-header */}
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0}
+            className="text-[10px] sm:text-[11px] md:text-xs font-semibold tracking-[0.2em] sm:tracking-[0.24em] uppercase"
+            style={{ color: '#8B7CFF' }}
+          >
+            — INTERNSHIP &amp; TRAINING
+          </motion.p>
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={1}
+            className="mt-3 mb-7 sm:mb-8 md:mb-10 text-[22px] sm:text-3xl md:text-[34px] lg:text-4xl font-extrabold leading-[1.15] tracking-[-0.02em]"
+          >
+            <span style={{ color: '#F3F4F6' }}>Industry </span>
+            <span
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage:
+                  'linear-gradient(135deg, #6C5CE7 0%, #8B7CFF 45%, #5B6CFF 100%)',
+              }}
+            >
+              Internship
+            </span>
+          </motion.h2>
+
+          <InternshipCard />
+        </div>
       </div>
 
       {/* ── Background decorations ── */}
